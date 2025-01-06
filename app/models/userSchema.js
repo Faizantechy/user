@@ -5,7 +5,6 @@ const usersSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    default: "example@gmail.com",
   },
   age: Number,
 });

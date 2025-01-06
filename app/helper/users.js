@@ -1,7 +1,6 @@
 import Users from "../models/userSchema";
 
-const { Mongoose, default: mongoose } = require("mongoose");
-
+import mongoose from "mongoose";
 //Creating a connection:
 
 export const connectDB = async () => {
@@ -10,7 +9,7 @@ export const connectDB = async () => {
       dbName: "Projectify",
     });
 
-    const user= new Users({
+     const user= await  Users.create({
 
         name:'Faizan',
         email:'faizanearmaan3@gmail.com',
@@ -18,9 +17,8 @@ export const connectDB = async () => {
 
     })
 
-    user.save()
     console.log('New user Created')
-    
+
     console.log("DB Connected");
     console.log(connection);
   } catch (error) {
